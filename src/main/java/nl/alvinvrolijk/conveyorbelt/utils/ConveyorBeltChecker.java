@@ -20,6 +20,9 @@ public class ConveyorBeltChecker {
             Bukkit.getScheduler().scheduleSyncRepeatingTask(ConveyorBelt.instance, () -> {
                 for (World world : Bukkit.getWorlds()) {
                     for (Entity entity : world.getEntities()) {
+                        if(entity.getType().equals(EntityType.PLAYER)){
+                        continue;
+                        }
                         int speed = 0;
                         Vector direction = null;
                         Block block = entity.getLocation().getBlock();
